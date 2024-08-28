@@ -38,28 +38,29 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.web3j</groupId>
-                <artifactId>web3j-maven-plugin</artifactId>
-                <version>${web3j.version}</version>
-                <configuration>
-                    <soliditySourceFiles>
-                        <directory>src/main/solidity</directory>
-                        <includes>
-                            <include>*.sol</include>
-                        </includes>
-                    </soliditySourceFiles>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec-maven-plugin.version}</version>
-                <configuration>
-                    <mainClass>org.web3j.sample.Application</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
+<plugin>
+    <groupId>org.web3j</groupId>
+    <artifactId>web3j-maven-plugin</artifactId>
+    <version>${web3j.version}</version>
+    <configuration>
+        <soliditySourceFiles>
+            <directory>src/main/solidity</directory>
+            <includes>
+                <include>*.sol</include>
+            </includes>
+        </soliditySourceFiles>
+        <outputDirectory>target/generated-sources</outputDirectory>
+        <packageName>org.web3j.model</packageName> <!-- Ensure this matches the package used in Application.java -->
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+
     </build>
 
 </project>
