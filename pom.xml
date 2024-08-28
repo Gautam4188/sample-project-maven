@@ -9,14 +9,21 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <web3j.version>3.6.0</web3j.version>
+        <web3j.version>4.8.7</web3j.version> <!-- Updated version -->
         <logback-classic.version>1.2.3</logback-classic.version>
-        <web3j-maven-plugin.version>0.3.7</web3j-maven-plugin.version>
+        <web3j-maven-plugin.version>0.4.0</web3j-maven-plugin.version> <!-- Updated version -->
         <junit.version>4.12</junit.version>
-        <exec-maven-plugin>1.6.0</exec-maven-plugin>
+        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>bintray-ethereum</id>
+            <url>https://dl.bintray.com/ethereum/maven/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -83,7 +90,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${exec-maven-plugin}</version>
+                <version>${exec-maven-plugin.version}</version>
                 <configuration>
                     <mainClass>org.web3j.sample.Application</mainClass>
                 </configuration>
