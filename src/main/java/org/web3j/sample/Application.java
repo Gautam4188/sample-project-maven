@@ -12,6 +12,7 @@ import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.DefaultGasProvider;
 import org.web3j.utils.Convert;
 import org.web3j.utils.Numeric;
+import org.web3j.model.Greeter; // Ensure this import is correct based on generated files
 
 import java.math.BigDecimal;
 
