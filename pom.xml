@@ -45,17 +45,16 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generate</goal> <!-- Changed from 'generate-sources' to 'generate' -->
+                            <goal>generate</goal> <!-- Ensure this is correct for your plugin version -->
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceDirectory>src/main/solidity</sourceDirectory> <!-- Changed to sourceDirectory -->
+                    <sourceDirectory>src/main/solidity</sourceDirectory> <!-- Changed from soliditySourceFiles to sourceDirectory -->
                     <outputDirectory>target/generated-sources/web3j</outputDirectory>
                     <packageName>org.web3j.model</packageName>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
