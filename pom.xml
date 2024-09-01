@@ -12,7 +12,6 @@
         <web3j.version>4.12.1</web3j.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <junit.version>4.12</junit.version>
-        <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -33,6 +32,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope> <!-- Added scope for JUnit -->
         </dependency>
     </dependencies>
 
@@ -49,13 +49,13 @@
                             <include>*.sol</include>
                         </includes>
                     </soliditySourceFiles>
-                    <outputDirectory>target/generated-sources</outputDirectory>
-                    <packageName>org.web3j.model</packageName> <!-- Ensure this matches the package used in Application.java -->
+                    <outputDirectory>target/generated-sources/web3j</outputDirectory> <!-- Ensured the output directory is specified correctly -->
+                    <packageName>org.web3j.model</packageName>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generate-sources</goal> <!-- Changed from 'generate' to 'generate-sources' -->
+                            <goal>generate-sources</goal> <!-- Using 'generate-sources' which is appropriate -->
                         </goals>
                     </execution>
                 </executions>
