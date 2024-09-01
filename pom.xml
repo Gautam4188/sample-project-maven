@@ -55,12 +55,12 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>generate-sources</goal> <!-- Changed from 'generate' to 'generate-sources' -->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-        </plugins> <!-- Added closing tag for plugins -->
+        </plugins>
     </build>
 
 </project>
