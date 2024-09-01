@@ -38,29 +38,29 @@
 
     <build>
         <plugins>
-<plugin>
-    <groupId>org.web3j</groupId>
-    <artifactId>web3j-maven-plugin</artifactId>
-    <version>${web3j.version}</version>
-    <configuration>
-        <soliditySourceFiles>
-            <directory>src/main/solidity</directory>
-            <includes>
-                <include>*.sol</include>
-            </includes>
-        </soliditySourceFiles>
-        <outputDirectory>target/generated-sources</outputDirectory>
-        <packageName>org.web3j.model</packageName> <!-- Ensure this matches the package used in Application.java -->
-    </configuration>
-    <executions>
-        <execution>
-            <goals>
-                <goal>generate</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
-
+            <plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>${web3j.version}</version>
+                <configuration>
+                    <soliditySourceFiles>
+                        <directory>src/main/solidity</directory>
+                        <includes>
+                            <include>*.sol</include>
+                        </includes>
+                    </soliditySourceFiles>
+                    <outputDirectory>target/generated-sources</outputDirectory>
+                    <packageName>org.web3j.model</packageName> <!-- Ensure this matches the package used in Application.java -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins> <!-- Added closing tag for plugins -->
     </build>
 
 </project>
