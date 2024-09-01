@@ -32,7 +32,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope> <!-- Added scope for JUnit -->
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -42,23 +42,18 @@
                 <groupId>org.web3j</groupId>
                 <artifactId>web3j-maven-plugin</artifactId>
                 <version>${web3j.version}</version>
-                <configuration>
-                    <soliditySourceFiles>
-                        <directory>src/main/solidity</directory>
-                        <includes>
-                            <include>*.sol</include>
-                        </includes>
-                    </soliditySourceFiles>
-                    <outputDirectory>target/generated-sources/web3j</outputDirectory> <!-- Ensured the output directory is specified correctly -->
-                    <packageName>org.web3j.model</packageName>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>generate-sources</goal> <!-- Using 'generate-sources' which is appropriate -->
+                            <goal>generate</goal> <!-- Changed from 'generate-sources' to 'generate' -->
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <sourceDirectory>src/main/solidity</sourceDirectory> <!-- Changed to sourceDirectory -->
+                    <outputDirectory>target/generated-sources/web3j</outputDirectory>
+                    <packageName>org.web3j.model</packageName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
